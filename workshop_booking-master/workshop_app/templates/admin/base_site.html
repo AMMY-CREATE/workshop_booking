@@ -1,0 +1,128 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+  /* ── Django Admin Financial Table Theme Overrides ── */
+  
+  /* Make the admin body match our dark theme if it isn't completely */
+  body {
+    background: #111; /* fallback */
+    background: var(--bg-main, #1B0C1A);
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  /* Table containers */
+  #content-main .module, #changelist-form .results {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    margin-bottom: 2rem !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Remove default borders and backgrounds from the table itself */
+  .module table, .results table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  /* Header Section (Caption) */
+  .module caption, .inline-group h2 {
+    background: linear-gradient(90deg, rgba(26,46,42,0.8), rgba(42,30,40,0.8)) !important;
+    color: #FADCD5 !important;
+    padding: 1.2rem 1.6rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Table Headers */
+  .module table thead th, .results table thead th {
+    padding: 1rem 1.6rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    text-align: left !important;
+  }
+
+  .module table thead th a, .results table thead th a {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* Table Rows */
+  .module table tbody tr, .results table tbody tr {
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+  }
+
+  .module table tbody tr.row1 { background: rgba(255, 255, 255, 0.01) !important; }
+  .module table tbody tr.row2 { background: transparent !important; }
+
+  /* Hover states */
+  .module table tbody tr:hover, .results table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    transform: translateY(-1px);
+  }
+
+  /* Table Cells */
+  .module table tbody td, .module table tbody th,
+  .results table tbody td, .results table tbody th {
+    padding: 1rem 1.6rem !important;
+    vertical-align: middle !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.95rem !important;
+  }
+
+  .module table tbody tr:last-child td, .module table tbody tr:last-child th {
+    border-bottom: none !important;
+  }
+
+  /* General Links in admin tables */
+  .module table a, .results table a {
+    color: #FADCD5 !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+  .module table a:hover, .results table a:hover {
+    text-decoration: underline !important;
+    opacity: 0.8 !important;
+  }
+
+  /* Admin Header */
+  #header {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+  }
+  #branding h1 a {
+    color: #FADCD5 !important;
+  }
+  
+  /* Dashboard specific tweaks */
+  #content h1 {
+    color: #fff !important;
+    font-weight: 800 !important;
+  }
+</style>
+{% endblock %}

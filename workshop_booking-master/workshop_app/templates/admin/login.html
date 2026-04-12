@@ -326,28 +326,28 @@
 
 <div class="glass-card">
 
-  <div class="glass-logo">🛡️</div>
+  <div class="glass-logo"></div>
 
   <h1 class="glass-title">Admin Area</h1>
   <p class="glass-subtitle">Authorized personnel only</p>
 
   {% if form.errors and not form.non_field_errors %}
     <div class="glass-alert">
-      <span>🤔</span>&nbsp; Please correct the error below.
+      <span></span>&nbsp; Please correct the error below.
     </div>
   {% endif %}
 
   {% if form.non_field_errors %}
     {% for error in form.non_field_errors %}
     <div class="glass-alert">
-      <span>🤔</span>&nbsp; {{ error }}
+      <span></span>&nbsp; {{ error }}
     </div>
     {% endfor %}
   {% endif %}
 
   {% if user.is_authenticated %}
     <div class="glass-alert">
-      <span>⚠️</span>&nbsp; You are authenticated as {{ username }}, but are not authorized to access this page. Would you like to login to a different account?
+      <span></span>&nbsp; You are authenticated as {{ username }}, but are not authorized to access this page. Would you like to login to a different account?
     </div>
   {% endif %}
 
@@ -365,7 +365,7 @@
       <input type="hidden" name="next" value="{{ next }}">
     </div>
 
-    <button type="submit" class="btn-glass-submit">Log in 🚀</button>
+    <button type="submit" class="btn-glass-submit">Log in </button>
   </form>
 
   <div class="glass-links" style="margin-top: 1.5rem;">

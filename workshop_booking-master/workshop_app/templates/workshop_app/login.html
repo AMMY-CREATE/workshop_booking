@@ -245,27 +245,79 @@
   .social-row {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-bottom: 1.6rem;
   }
   .social-btn {
-    width: 44px; height: 44px;
-    border-radius: 50%;
+    position: relative;
+    width: 50px; height: 50px;
+    border-radius: 50px;
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.18);
     display: flex; align-items: center; justify-content: center;
     color: rgba(255,255,255,0.8);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    z-index: 10;
   }
+
+  .social-btn.facebook { --grad-start: #2F80ED; --grad-end: #56CCF2; }
+  .social-btn.twitter { --grad-start: #7EE8FA; --grad-end: #80FF72; }
+  .social-btn.instagram { --grad-start: #f434e2; --grad-end: #ffa9c6; }
+
+  .social-btn .bg-solid, .social-btn .bg-blur {
+    position: absolute;
+    inset: -1px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--grad-start), var(--grad-end));
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+  .social-btn .bg-blur {
+    top: 5px;
+    filter: blur(14px);
+    z-index: -2;
+  }
+
   .social-btn:hover {
-    background: rgba(255,255,255,0.2);
+    width: 140px;
+    border-color: transparent;
     color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    text-decoration: none;
+    box-shadow: none;
+  }
+  
+  .social-btn:hover .bg-solid { opacity: 1; }
+  .social-btn:hover .bg-blur { opacity: 0.6; }
+
+  .social-btn .icon {
+    position: absolute;
+    transition: all 0.4s ease;
+  }
+  
+  .social-btn:hover .icon {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .social-btn .title {
+    position: absolute;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .social-btn:hover .title {
+    transform: scale(1);
+    opacity: 1;
+    transition-delay: 0.15s;
   }
 
   .glass-links {
@@ -352,14 +404,14 @@
 
 <div class="glass-card">
 
-  <div class="glass-logo">🎓</div>
+  <div class="glass-logo"></div>
 
-  <h1 class="glass-title">Hey, Learner! 👋</h1>
-  <p class="glass-subtitle">Ready to dive back in? We missed you 🚀</p>
+  <h1 class="glass-title">Hey, Learner! </h1>
+  <p class="glass-subtitle">Ready to dive back in? We missed you </p>
 
   {% if form.errors %}
     <div class="glass-alert">
-      <span>🤔</span>&nbsp; Hmm… that doesn't look right. Double-check your username and secret key!
+      <span></span>&nbsp; Hmm… that doesn't look right. Double-check your username and secret key!
     </div>
   {% endif %}
 
@@ -376,20 +428,29 @@
       {{ form.password }}
     </div>
 
-    <button type="submit" class="btn-glass-submit">Let me in 🚀</button>
+    <button type="submit" class="btn-glass-submit">Let me in </button>
   </form>
 
   <div class="glass-divider"><span>or continue with</span></div>
 
   <div class="social-row">
-    <span class="social-btn" title="Facebook">
-      <i class="fa fa-facebook"></i>
+    <span class="social-btn facebook" title="Facebook">
+      <span class="bg-solid"></span>
+      <span class="bg-blur"></span>
+      <span class="icon"><i class="fa fa-facebook"></i></span>
+      <span class="title">Facebook</span>
     </span>
-    <span class="social-btn" title="Twitter/X">
-      <i class="fa fa-twitter"></i>
+    <span class="social-btn twitter" title="Twitter">
+      <span class="bg-solid"></span>
+      <span class="bg-blur"></span>
+      <span class="icon"><i class="fa fa-twitter"></i></span>
+      <span class="title">Twitter</span>
     </span>
-    <span class="social-btn" title="Instagram">
-      <i class="fa fa-instagram"></i>
+    <span class="social-btn instagram" title="Instagram">
+      <span class="bg-solid"></span>
+      <span class="bg-blur"></span>
+      <span class="icon"><i class="fa fa-instagram"></i></span>
+      <span class="title">Instagram</span>
     </span>
   </div>
 
@@ -405,8 +466,8 @@
   document.addEventListener('DOMContentLoaded', function() {
     var usernameInput = document.getElementById('id_username');
     var passwordInput = document.getElementById('id_password');
-    if (usernameInput) usernameInput.setAttribute('placeholder', "What's your name, learner? 🧠");
-    if (passwordInput) passwordInput.setAttribute('placeholder', 'Enter your secret key 🔐');
+    if (usernameInput) usernameInput.setAttribute('placeholder', "What's your name, learner? ");
+    if (passwordInput) passwordInput.setAttribute('placeholder', 'Enter your secret key ');
   });
 </script>
 {% endblock %}
