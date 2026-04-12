@@ -1,7 +1,4 @@
-/* ============================================================
-   LimelightNav — Pure CSS/JS port of the React component
-   Matches the shadcn LimelightNav visual spec exactly.
-   ============================================================ */
+
 
 .limelight-nav-wrapper {
   position: fixed;
@@ -26,7 +23,6 @@
   gap: 0;
 }
 
-/* ── Nav Items ── */
 .limelight-item {
   position: relative;
   z-index: 20;
@@ -79,7 +75,6 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* ── Limelight indicator bar ── */
 .limelight-indicator {
   position: absolute;
   top: 0;
@@ -89,16 +84,14 @@
   border-radius: 9999px;
   background: linear-gradient(90deg, #FADCD5, #765D67);
   box-shadow: 0 0 20px 4px rgba(250, 220, 213, 0.6), 0 50px 15px rgba(250, 220, 213, 0.25);
-  left: -999px; /* hidden until JS positions it */
+  left: -999px; 
   pointer-events: none;
 }
 
-/* Fade-in transition after init */
 .limelight-indicator.ready {
   transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Limelight beam (trapezoid glow below bar) ── */
 .limelight-beam {
   position: absolute;
   left: -30%;

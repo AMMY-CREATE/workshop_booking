@@ -4,7 +4,6 @@
  Workshop  Statistics
 {% endblock %}
 
-
 {% block extra %}
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -16,12 +15,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  	<!-- For Charts -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
-	<!-- For Google GeoChart India Map -->
 	<script type='text/javascript' src='https://www.google.com/jsapi'></script>
 
 <script>
@@ -86,7 +83,6 @@
 			    <input type="radio" name="radio-1" id="radio-3" value="MOIN">
 			  </fieldset>
 		</div>
-	
 
 	{% if show_workshop_stats %}
 	<div  align="right" class="col-md-6">
@@ -153,7 +149,7 @@
 				{% endif %}
 			{% endfor %}
 		</table>
-		<!-- Page Navigation -->
+		
 		<div class="container">
 		<div class="Page-Nav" align="center">
 		<nav aria-label="Page navigation">
@@ -186,7 +182,6 @@
 	{% endif %}
 	</div>
 
-
 <div class="row">
 	<br>
 	<div class="col-md-12 ">
@@ -207,7 +202,6 @@
 			        	myChart.destroy();
 			            }
 
-			               
 			        document.getElementById("visualization").style.visibility='hidden';
 					myChart = new Chart(ctx1, {
 					    type: 'bar',
@@ -342,8 +336,8 @@
 		</script>	
 		<style>
 		    #visualization path {
-		    stroke-width:1; /* control the countries borders width */
-		    stroke:white; /* choose a color for the border */
+		    stroke-width:1; 
+		    stroke:white; 
 		    }
 		</style>
 		<div id="visualization" style="width: 400px; height: 300px; display: block; margin: 0 auto;" ></div>

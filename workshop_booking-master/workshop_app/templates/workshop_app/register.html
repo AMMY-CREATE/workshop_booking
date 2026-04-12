@@ -5,7 +5,7 @@
 
 {% block extra-custom-scripts %}
 <style>
-  /* ── Full-Screen Layout ── */
+  
   body { margin: 0; padding: 0; overflow-x: hidden; }
 
   .base-content {
@@ -17,7 +17,6 @@
     padding: 2rem 1rem 4rem !important;
   }
 
-  /* ── Cinematic Background ── */
   .login-bg {
     position: fixed;
     inset: 0;
@@ -31,13 +30,11 @@
     background: linear-gradient(135deg,rgba(5,20,15,0.65) 0%,rgba(10,30,25,0.55) 50%,rgba(5,15,20,0.70) 100%);
   }
 
-  /* ── Orbs ── */
   .orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.35; z-index: -1; animation: orbFloat 12s ease-in-out infinite alternate; }
   .orb-1 { width:520px;height:520px;background:radial-gradient(circle,#FADCD5,#765D67);top:-160px;left:-120px;animation-duration:14s; }
   .orb-2 { width:400px;height:400px;background:radial-gradient(circle,#6D3C52,#4B2138);bottom:-140px;right:-80px;animation-duration:18s;animation-delay:-5s; }
   @keyframes orbFloat { 0%{transform:translate(0,0) scale(1);}100%{transform:translate(60px,40px) scale(1.12);} }
 
-  /* ── Glass Card ── */
   .glass-card {
     background: rgba(255,255,255,0.09);
     backdrop-filter: blur(28px) saturate(180%);
@@ -60,7 +57,6 @@
   }
   @keyframes floatIn { 0%{opacity:0;transform:translateY(36px) scale(0.97);}100%{opacity:1;transform:translateY(0) scale(1);} }
 
-  /* ── Logo / Icon ── */
   .glass-logo {
     display:flex;align-items:center;justify-content:center;
     width:58px;height:58px;border-radius:50%;
@@ -70,11 +66,9 @@
     font-size:1.6rem;
   }
 
-  /* ── Typography ── */
   .glass-title { color:#fff;font-family:'Inter',sans-serif;font-size:1.65rem;font-weight:800;text-align:center;letter-spacing:-0.03em;margin-bottom:0.2rem; }
   .glass-subtitle { color:rgba(255,255,255,0.5);font-size:0.85rem;text-align:center;margin-bottom:1.8rem;font-family:'Inter',sans-serif; }
 
-  /* ── Two-column grid for form fields ── */
   .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -82,14 +76,12 @@
   }
   .form-grid .full-width { grid-column: 1 / -1; }
 
-  /* ── Labels ── */
   .glass-label {
     color:rgba(255,255,255,0.75);font-size:0.78rem;font-weight:600;
     letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.35rem;
     font-family:'Inter',sans-serif;display:block;
   }
 
-  /* ── Inputs & Selects ── */
   #register-form input[type="text"],
   #register-form input[type="email"],
   #register-form input[type="password"],
@@ -117,12 +109,10 @@
     color:#fff !important;
   }
 
-  /* ── Help text & errors ── */
   .help-text { color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:0.3rem;font-family:'Inter',sans-serif; }
   .errorlist { list-style:none;padding:0;margin:0.3rem 0 0; }
   .errorlist li { background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.35);border-radius:8px;padding:0.4rem 0.7rem;color:#fca5a5;font-size:0.8rem;font-family:'Inter',sans-serif; }
 
-  /* ── Submit Button ── */
   .btn-glass-submit {
     width:100%;padding:0.9rem;border:none;border-radius:12px;
     background:linear-gradient(135deg,#6D3C52 0%,#4B2138 100%);
@@ -133,18 +123,14 @@
   }
   .btn-glass-submit:hover { transform:translateY(-2px);box-shadow:0 12px 32px rgba(109,60,82,0.5); }
 
-  /* ── Footer link ── */
   .glass-links { display:flex;justify-content:center;gap:1.4rem;margin-top:1.2rem; }
   .glass-links a { color:rgba(255,255,255,0.5);font-size:0.82rem;font-family:'Inter',sans-serif;text-decoration:none;transition:color 0.2s; }
   .glass-links a:hover { color:rgba(250,220,213,0.9);text-decoration:none; }
 
-  /* ── Hide navbar/footer ── */
   .navbar, footer.footer { display:none !important; }
 
-  /* ── Required star ── */
   label.required::after { content:" *"; color: rgba(250,220,213,0.8); }
 
-  /* ── Divider ── */
   .section-divider { grid-column:1/-1;display:flex;align-items:center;gap:0.8rem;margin:0.4rem 0; }
   .section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
   .section-divider span{color:rgba(255,255,255,0.35);font-size:0.75rem;font-family:'Inter',sans-serif;white-space:nowrap;}
@@ -168,7 +154,6 @@
     {% csrf_token %}
     <div class="form-grid">
 
-      <!-- Account Details Section -->
       <div class="section-divider full-width"><span>Account Details</span></div>
 
       <div>
@@ -196,7 +181,6 @@
         {% if form.confirm_password.errors %}<ul class="errorlist">{% for e in form.confirm_password.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
       </div>
 
-      <!-- Personal Details Section -->
       <div class="section-divider full-width"><span>Personal Details</span></div>
 
       <div>
@@ -223,7 +207,6 @@
         {% if form.last_name.errors %}<ul class="errorlist">{% for e in form.last_name.errors %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
       </div>
 
-      <!-- Institute Details Section -->
       <div class="section-divider full-width"><span>Institute Details</span></div>
 
       <div class="full-width">

@@ -5,7 +5,7 @@
 
 {% block extra-custom-scripts %}
 <style>
-  /* ── Full-Screen Login Override ── */
+  
   body {
     margin: 0;
     padding: 0;
@@ -20,7 +20,6 @@
     justify-content: center;
   }
 
-  /* ── Cinematic Background ── */
   .login-bg {
     position: fixed;
     inset: 0;
@@ -28,7 +27,6 @@
     z-index: -2;
   }
 
-  /* Dark overlay so glass pops */
   .login-bg::after {
     content: '';
     position: absolute;
@@ -41,7 +39,6 @@
     );
   }
 
-  /* ── Floating Colour Orbs ── */
   .orb {
     position: fixed;
     border-radius: 50%;
@@ -77,7 +74,6 @@
     100% { transform: translate(60px, 40px) scale(1.12); }
   }
 
-  /* ── Glass Card ── */
   .glass-card {
     background: rgba(255, 255, 255, 0.09);
     backdrop-filter: blur(28px) saturate(180%);
@@ -95,7 +91,6 @@
     overflow: hidden;
   }
 
-  /* Top shimmer line */
   .glass-card::before {
     content: '';
     position: absolute;
@@ -110,7 +105,6 @@
     100% { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* ── Logo / Brand Icon ── */
   .glass-logo {
     display: flex;
     align-items: center;
@@ -123,7 +117,6 @@
     font-size: 1.8rem;
   }
 
-  /* ── Typography ── */
   .glass-title {
     color: #ffffff;
     font-family: 'Inter', sans-serif;
@@ -142,7 +135,6 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* ── Labels ── */
   .glass-label {
     color: rgba(255,255,255,0.75);
     font-size: 0.82rem;
@@ -154,7 +146,6 @@
     display: block;
   }
 
-  /* ── Inputs ── */
   .glass-input {
     width: 100%;
     background: rgba(255, 255, 255, 0.08) !important;
@@ -180,7 +171,6 @@
     color: #fff !important;
   }
 
-  /* Apply glass-input styles to Django form widgets */
   .glass-input-wrapper input {
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.16) !important;
@@ -194,7 +184,6 @@
     outline: none;
   }
 
-  /* ── Submit Button ── */
   .btn-glass-submit {
     width: 100%;
     padding: 0.9rem;
@@ -233,7 +222,6 @@
     left: 120%;
   }
 
-  /* ── Divider ── */
   .glass-divider {
     display: flex;
     align-items: center;
@@ -254,7 +242,6 @@
     white-space: nowrap;
   }
 
-  /* ── Footer Links ── */
   .glass-links {
     display: flex;
     justify-content: center;
@@ -273,7 +260,6 @@
     text-decoration: none;
   }
 
-  /* ── Error Alert ── */
   .glass-alert {
     background: rgba(239,68,68,0.15);
     border: 1px solid rgba(239,68,68,0.35);
@@ -288,15 +274,12 @@
     gap: 0.5rem;
   }
 
-  /* ── Hide default navbar/footer on login ── */
   .navbar, footer.footer { display: none !important; }
 
-  /* ── Form group spacing ── */
   .glass-form-group {
     margin-bottom: 1.2rem;
   }
 
-  /* Force Django form widget styling */
   #login-form input[type="text"],
   #login-form input[type="password"],
   #login-form input[type="email"] {
@@ -334,25 +317,20 @@
 {% block footer %}{% endblock %}
 
 {% block content %}
-<!-- Cinematic Background -->
+
 <div class="login-bg"></div>
 
-<!-- Floating Orbs -->
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 
-<!-- Glass Card -->
 <div class="glass-card">
 
-  <!-- Logo -->
   <div class="glass-logo">🛡️</div>
 
-  <!-- Title -->
   <h1 class="glass-title">Admin Area</h1>
   <p class="glass-subtitle">Authorized personnel only</p>
 
-  <!-- Error Messages -->
   {% if form.errors and not form.non_field_errors %}
     <div class="glass-alert">
       <span>🤔</span>&nbsp; Please correct the error below.
@@ -373,7 +351,6 @@
     </div>
   {% endif %}
 
-  <!-- Login Form -->
   <form id="login-form" method="post" action="{{ app_path }}">
     {% csrf_token %}
 

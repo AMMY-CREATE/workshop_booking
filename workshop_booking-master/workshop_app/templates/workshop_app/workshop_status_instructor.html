@@ -20,7 +20,6 @@
     <script src="{% static 'workshop_app/js/datepicker.js' %}"></script>
 {% endblock %}
 
-
 {% block content %}
     {% if not workshops %}
         <div class="container">
@@ -35,7 +34,6 @@
     {% else %}
         <h2 class="text-center mb-5 font-weight-800 text-gradient">Instructor Dashboard</h2>
 
-        <!-- Accepted View -->
         <div class="container fade-in">
             <h4 class="mb-4 font-weight-700">Workshops Accepted</h4>
             <div class="card border-0 shadow-lg mb-5">
@@ -97,8 +95,6 @@
             </div>
         </div>
 
-
-        <!-- Proposed View -->
         <div class="container fade-in">
             <h4 class="mb-4 font-weight-700">Workshops Proposed By Coordinators</h4>
             <div class="card border-0 shadow-lg mb-5">

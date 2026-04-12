@@ -1,5 +1,5 @@
 :root {
-  /* Modern Color Palette - Custom Theme */
+  
   --primary-color: #6D3C52; 
   --primary-glow: rgba(109, 60, 82, 0.4);
   --secondary-color: #765D67; 
@@ -11,10 +11,8 @@
   --text-muted: #765D67;
   --border-color: rgba(118, 93, 103, 0.4);
 
-  /* Typography */
   --font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  
-  /* Layout & Spacing */
+
   --radius-md: 14px;
   --radius-lg: 20px;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
@@ -38,7 +36,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Background Blobs */
 .blob-decor {
   position: absolute;
   width: 500px;
@@ -62,7 +59,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   letter-spacing: -0.03em;
 }
 
-/* Improved Glassmorphism Navbar */
 .navbar {
   z-index: 1000;
   background: rgba(27, 12, 26, 0.7) !important;
@@ -82,7 +78,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   font-size: 1.5rem;
 }
 
-/* Enhanced Buttons with Glow */
 .btn {
   border-radius: var(--radius-md);
   font-weight: 600;
@@ -109,7 +104,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   box-shadow: 0 10px 15px -3px rgba(118, 93, 103, 0.3);
 }
 
-/* Premium Cards with Border Interaction */
 .card {
   background: rgba(45, 34, 47, 0.9);
   backdrop-filter: blur(10px);
@@ -140,7 +134,31 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   opacity: 1;
 }
 
-/* Modern Form Controls */
+.jumbotron {
+  background: rgba(45, 34, 47, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(118, 93, 103, 0.3);
+  box-shadow: var(--shadow-md);
+  padding: 3rem 2.5rem;
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.jumbotron h1, .jumbotron h2, .jumbotron h3 {
+  color: var(--text-heading);
+  margin-bottom: 1rem;
+}
+
 .form-control, .custom-select {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
@@ -157,7 +175,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   box-shadow: 0 0 0 4px rgba(109, 60, 82, 0.15);
 }
 
-/* Profile Accent Elements */
 .profile-avatar-bg {
   width: 120px;
   height: 120px;
@@ -171,7 +188,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   color: white;
 }
 
-/* Custom Table Polish */
 .table { color: var(--text-main); }
 .table thead th {
   background: var(--bg-surface);
@@ -187,7 +203,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   background-color: rgba(109, 60, 82, 0.1);
 }
 
-/* Animations */
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -197,7 +212,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -217,7 +231,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   -webkit-text-fill-color: transparent;
 }
 
-/* Button Shimmer Effect */
 .btn-primary {
   position: relative;
   overflow: hidden;
@@ -239,7 +252,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   transition: 0.5s;
 }
 
-/* Modern Status Badges */
 .badge {
   padding: 0.5rem 0.85rem;
   font-weight: 700;
@@ -268,7 +280,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
   border-left-color: var(--primary-color);
 }
 
-/* Base Content Area */
 .base-content {
   padding-top: 8rem;
   padding-bottom: 8rem;

@@ -17,7 +17,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,9 +26,9 @@
     <link rel="stylesheet" href="{% static 'workshop_app/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'workshop_app/css/toastr.min.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'workshop_app/css/base.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'workshop_app/css/base.css' %}?v=2" type="text/css"/>
     <link rel="stylesheet" href="{% static 'workshop_app/css/font-awesome.css' %}" type="text/css"/>
-    <link rel="stylesheet" href="{% static 'workshop_app/css/limelight-nav.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'workshop_app/css/limelight-nav.css' %}?v=2" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 
     {% block extra-custom-scripts %}
@@ -38,7 +37,7 @@
 </head>
 
 <body>
-<!-- Background Decorations -->
+
 <div class="blob-decor" style="top: -100px; left: -100px; background: var(--primary-color);"></div>
 <div class="blob-decor" style="bottom: -100px; right: -100px; background: var(--secondary-color); width: 600px; height: 600px; animation-duration: 25s;"></div>
 <div class="blob-decor" style="top: 40%; left: 60%; background: var(--accent-color); width: 300px; height: 300px; opacity: 0.03; animation-duration: 15s;"></div>
