@@ -52,21 +52,24 @@ If you wish to work on the UI components interactively:
 
 ### 1. What design principles guided your improvements?
 
-The redesign was driven by the following core philosophies to improve the user experience:
-* **User-Centric Design:** The primary focus was creating a website that is simple to navigate and prevents user confusion.
-* **Simplicity and Clarity:** We strategically removed visual clutter that people do not need to see.
-* **Whitespace and Typography:** Space and words were used intentionally so users instantly understand what they are looking at.
-* **Consistency:** We ensured that every page on the website shares the same theme so the application feels unified.
-* **Accessibility:** We utilized relatable phrasing and ensured there is substantial contrast between colors.
-* **Visual Hierarchy:** Important interactive elements are visually prioritized so users know exactly where to click.
+I wanted to make the website easy for students to use.
+The User-Centric Design was important to us. I made sure the website is simple to navigate and does not confuse students.
+I also thought about Simplicity And Clarity.
+I removed a lot of things that people do not need to see.
+We used space and words in a way so people can understand what they are looking at.
+We made sure that everything on the website looks the same.
+We did this so the website feels like one thing.
+We used words that're relatable  and made sure there is enough difference, between colors.
+We thought about the Visual Hierarchy too.
 
 ### 2. How did you make sure the application works well on all devices?
 
-To make the application reliably responsive on all devices, we took a systematic approach:
-* **Systematic Scaling:** We designed expansive layouts for bigger devices first, then adapted and structured them carefully down for smaller screens.
-* **Modern CSS Tools:** Extensive use of CSS Flexbox and Grid was made to construct inherently flexible UI elements that reflow seamlessly.
-* **Relative Units:** Instead of heavily using fixed pixel dimensions, we relied on percentages and relative units like `rem`, `vw`, and `vh`.
-* **Testing:** Using comprehensive browser tooling alongside real-device tests, we verified that layouts scaled appropriately and usability wasn't compromised on narrow phone screens.
+To make the application work well on all devices we did a things.
+We used a first approach. This means we designed the layouts for bigger device first and then made them work for smaller devices.
+We also used Flexbox and Grid. These are tools that help make the layouts flexible and work well on devices.
+We used units to measure things. Of using fixed numbers we used things like percentage and relative units like rem and vw/vh.
+We tested the application, on different devices. We used tools to see how it would look on different screens and we also tried it on real devices to make sure it worked well.
+We did all this to make sure the application is responsive. This means it works well on the application no matter what device people use to access it
 
 ### 3. What trade-offs did you make between design and performance?
 
@@ -76,6 +79,5 @@ Balancing visual fidelity and speed required a few key choices:
 
 ### 4. What was the challenging part of the task and how did you approach it?
 
-The most challenging part of the task was balancing a modern, highly interactive UI with performance constraints. This was particularly demanding considering our primary demographic consists of students who often rely on lower-end devices or mobile connections. 
-
-Additionally, cleanly translating complex data views from a larger desktop viewport to a smaller mobile screen was tricky. We solved this by creating highly modular, flex-based components that stack intuitively and remove non-essential decorative elements when the screen size is restricted.
+The challenging part was balancing a modern UI with performance constraints. This was especially hard because most users are students who use devices.
+And converting from bigger screen to smaller screen
