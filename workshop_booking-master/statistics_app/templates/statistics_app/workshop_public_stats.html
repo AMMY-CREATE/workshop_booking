@@ -3,6 +3,70 @@
 {% block title %} Statistics {% endblock %}
 
 {% block content %}
+<style>
+/* Responsive Table -> Cards transformation for Statistics */
+@media (max-width: 991px) {
+    .table-responsive-sm table, 
+    .table-responsive-sm thead, 
+    .table-responsive-sm tbody, 
+    .table-responsive-sm th, 
+    .table-responsive-sm td, 
+    .table-responsive-sm tr { 
+        display: block; 
+        width: 100%;
+    }
+    
+    .table-responsive-sm thead tr { 
+        position: absolute;
+        top: -9999px; left: -9999px;
+    }
+    
+    .table-responsive-sm tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        padding: 0.5rem;
+        background: rgba(255,255,255,0.02);
+    }
+    
+    .table-responsive-sm td { 
+        border: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: right !important;
+        min-height: 48px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 0.85rem !important;
+    }
+    
+    .table-responsive-sm td:last-child { border-bottom: none !important; }
+    
+    .table-responsive-sm td:before { 
+        position: absolute;
+        left: 1rem;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: var(--text-muted);
+        content: attr(data-label);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+}
+
+.card { margin-bottom: 1.5rem; }
+@media (max-width: 768px) {
+    .btn { width: 100%; margin-bottom: 0.5rem; }
+    .col-md-3, .col-md-4, .col-md-6 { margin-bottom: 1rem; }
+    form .card-body div { margin-bottom: 0.75rem; }
+}
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
@@ -77,12 +141,12 @@
                 {% for workshop in objects %}
                     <tbody>
                         <tr>
-                            <td>{{ forloop.counter0|add:objects.start_index}}</td>
-                            <td>{{ workshop.coordinator.get_full_name | capfirst }}</td>
-                            <td>{{ workshop.coordinator.profile.institute | capfirst }}</td>
-                            <td>{{ workshop.instructor.get_full_name | capfirst }}</td>
-                            <td>{{ workshop.workshop_type.name }}</td>
-                            <td>{{ workshop.date | date}}</td>
+                            <td data-label="Sr No.">{{ forloop.counter0|add:objects.start_index}}</td>
+                            <td data-label="Coordinator">{{ workshop.coordinator.get_full_name | capfirst }}</td>
+                            <td data-label="Institute">{{ workshop.coordinator.profile.institute | capfirst }}</td>
+                            <td data-label="Instructor">{{ workshop.instructor.get_full_name | capfirst }}</td>
+                            <td data-label="Workshop">{{ workshop.workshop_type.name }}</td>
+                            <td data-label="Date">{{ workshop.date | date}}</td>
                         </tr>
                     </tbody>
                 {% endfor %}
@@ -130,8 +194,10 @@
             options: {}
         });
         $("#dialog").dialog({
-            width: 900,
-            height: 500
+            width: window.innerWidth > 960 ? 900 : window.innerWidth * 0.95,
+            height: window.innerWidth > 960 ? 550 : 'auto',
+            modal: true,
+            responsive: true
         });
     }
 </script>

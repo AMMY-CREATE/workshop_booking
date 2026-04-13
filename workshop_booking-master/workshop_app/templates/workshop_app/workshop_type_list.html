@@ -5,12 +5,37 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container fade-in">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="mb-0">Workshop Types</h2>
+<style>
+/* Responsive Table -> Cards for Workshop Types */
+@media (max-width: 767px) {
+    .table-responsive table, .table-responsive thead, .table-responsive tbody, .table-responsive th, .table-responsive td, .table-responsive tr { 
+        display: block; width: 100%;
+    }
+    .table-responsive thead tr { position: absolute; top: -9999px; left: -9999px; }
+    .table-responsive tr {
+        margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px; padding: 0.5rem; background: rgba(255,255,255,0.02);
+    }
+    .table-responsive td { 
+        border: none !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; 
+        position: relative; padding-left: 50% !important; text-align: right !important;
+        min-height: 48px; display: flex; justify-content: flex-end; align-items: center;
+    }
+    .table-responsive td:last-child { border-bottom: none !important; }
+    .table-responsive td:before { 
+        position: absolute; left: 1rem; width: 45%; padding-right: 10px; 
+        white-space: nowrap; text-align: left; font-weight: 700;
+        color: var(--text-muted); content: attr(data-label); font-size: 0.72rem;
+        text-transform: uppercase;
+    }
+}
+</style>
+<div class="container fade-in">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+            <h2 class="mb-0 text-white font-weight-800">Workshop Types</h2>
             {% if request.user|has_group:"instructor" %}
-                <a href="{% url 'workshop_app:add_workshop_type' %}" class="btn btn-primary">
-                    <i class="fa fa-plus mr-2"></i>Add Workshop Type
+                <a href="{% url 'workshop_app:add_workshop_type' %}" class="btn btn-primary" style="border-radius: 10px; font-weight: 600;">
+                    <i class="fa fa-plus mr-2"></i>Add Category
                 </a>
             {% endif %}
         </div>
@@ -30,11 +55,11 @@
                         <tbody>
                             {% for w in workshop_type %}
                             <tr>
-                                <td class="pl-4">{{ forloop.counter }}</td>
-                                <td class="font-weight-600">{{ w.name }}</td>
-                                <td>{{ w.duration }}</td>
-                                <td class="text-right pr-4">
-                                    <a href="{% url 'workshop_app:workshop_type_details' w.id %}" class="btn btn-outline-primary btn-sm">
+                                <td data-label="Sr No" class="pl-4">{{ forloop.counter }}</td>
+                                <td data-label="Name" class="font-weight-600">{{ w.name }}</td>
+                                <td data-label="Duration">{{ w.duration }} Days</td>
+                                <td data-label="Action" class="text-right pr-4">
+                                    <a href="{% url 'workshop_app:workshop_type_details' w.id %}" class="btn btn-outline-primary btn-sm px-3" style="border-radius: 8px;">
                                         View Details
                                     </a>
                                 </td>

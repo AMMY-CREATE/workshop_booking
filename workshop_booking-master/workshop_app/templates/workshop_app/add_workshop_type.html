@@ -6,76 +6,78 @@
 
 {% block content %}
     <div class="container fade-in">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="mb-4 d-flex align-items-center justify-content-between">
-                    <h2 class="mb-0">New Workshop Type</h2>
-                    <a href="{% url 'workshop_app:workshop_type_list' %}" class="btn btn-outline-primary btn-sm">
-                        <i class="fa fa-arrow-left mr-2"></i>Back to List
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-lg-10">
+                <div class="mb-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
+                    <h2 class="text-white font-weight-800 mb-0">Define New Workshop</h2>
+                    <a href="{% url 'workshop_app:workshop_type_list' %}" class="btn btn-outline-primary btn-sm px-4" style="border-radius: 8px;">
+                        <i class="fa fa-arrow-left mr-2"></i>Back to Categories
                     </a>
                 </div>
 
-                <div class="card shadow-sm border-0">
+                <div class="card overflow-hidden" style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
                     <div class="card-body p-4 p-md-5">
-                        <form method="post">
+                        <form method="post" class="responsive-form">
                             {% csrf_token %}
                             
-                            <div class="row mb-4">
-                                <div class="col-md-3">
-                                    <label class="font-weight-600 text-heading">Workshop Name</label>
+                            <div class="row mb-5 align-items-sm-center">
+                                <div class="col-md-3 mb-2 mb-md-0">
+                                    <label class="text-uppercase small font-weight-700 m-0" style="color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">Workshop Name</label>
                                 </div>
                                 <div class="col-md-9">
                                     {{ form.name }}
                                     {% if form.name.errors %}
-                                        <div class="text-danger small mt-1">{{ form.name.errors }}</div>
+                                        <div class="text-danger small mt-2" style="font-weight: 500;">{{ form.name.errors }}</div>
                                     {% endif %}
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-3">
-                                    <label class="font-weight-600 text-heading">Duration (Days)</label>
+                            <div class="row mb-5 align-items-sm-center">
+                                <div class="col-md-3 mb-2 mb-md-0">
+                                    <label class="text-uppercase small font-weight-700 m-0" style="color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">Duration (Days)</label>
                                 </div>
                                 <div class="col-md-9">
                                     {{ form.duration }}
                                     {% if form.duration.help_text %}
-                                        <div class="text-muted small mt-1">{{ form.duration.help_text }}</div>
+                                        <div class="small mt-2" style="color: rgba(255,255,255,0.4);">{{ form.duration.help_text }}</div>
                                     {% endif %}
                                     {% if form.duration.errors %}
-                                        <div class="text-danger small mt-1">{{ form.duration.errors }}</div>
+                                        <div class="text-danger small mt-2" style="font-weight: 500;">{{ form.duration.errors }}</div>
                                     {% endif %}
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-3">
-                                    <label class="font-weight-600 text-heading">Description</label>
+                            <div class="row mb-5">
+                                <div class="col-md-3 mb-2 mb-md-0 pt-md-2">
+                                    <label class="text-uppercase small font-weight-700 m-0" style="color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">Description</label>
                                 </div>
                                 <div class="col-md-9">
                                     {{ form.description }}
                                     {% if form.description.errors %}
-                                        <div class="text-danger small mt-1">{{ form.description.errors }}</div>
+                                        <div class="text-danger small mt-2" style="font-weight: 500;">{{ form.description.errors }}</div>
                                     {% endif %}
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <div class="col-md-3">
-                                    <label class="font-weight-600 text-heading">Terms & Conditions</label>
+                            <div class="row mb-5">
+                                <div class="col-md-3 mb-2 mb-md-0 pt-md-2">
+                                    <label class="text-uppercase small font-weight-700 m-0" style="color: rgba(255,255,255,0.6); letter-spacing: 0.1em;">Terms & Conditions</label>
                                 </div>
                                 <div class="col-md-9">
                                     {{ form.terms_and_conditions }}
                                     {% if form.terms_and_conditions.errors %}
-                                        <div class="text-danger small mt-1">{{ form.terms_and_conditions.errors }}</div>
+                                        <div class="text-danger small mt-2" style="font-weight: 500;">{{ form.terms_and_conditions.errors }}</div>
                                     {% endif %}
                                 </div>
                             </div>
 
-                            <hr class="my-5">
+                            <hr class="my-5" style="border-top: 1px solid rgba(255,255,255,0.1);">
 
-                            <div class="d-flex justify-content-end">
-                                <a href="{% url 'workshop_app:workshop_type_list' %}" class="btn btn-outline-primary px-4 mr-3">Cancel</a>
-                                <button type="submit" class="btn btn-primary px-5">Create Workshop Type</button>
+                            <div class="d-flex flex-column flex-sm-row justify-content-end gap-3">
+                                <a href="{% url 'workshop_app:workshop_type_list' %}" class="btn btn-outline-light px-4 py-2 border-0" style="background: rgba(255,255,255,0.05); border-radius: 12px; font-weight: 600;">Cancel</a>
+                                <button type="submit" class="btn btn-primary px-5 py-2 shadow-sm" style="border-radius: 12px; font-weight: 700; background: linear-gradient(135deg, #6366f1, #818cf8);">
+                                    Create Category
+                                </button>
                             </div>
                         </form>
                     </div>

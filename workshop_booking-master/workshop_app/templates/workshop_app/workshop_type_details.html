@@ -5,26 +5,51 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h2 class="text-center m-3">Workshop Details</h2>
-        <table class="table table-hover">
-            <tr class="d-flex">
-                <th class="col-3">Workshop Name :</th>
-                <td class="col">{{ workshop_type.name }}</td>
-            </tr>
-            <tr class="d-flex">
-                <th class="col-3">Duration :</th>
-                <td class="col">{{ workshop_type.duration }} day(s)</td>
-            </tr>
-            <tr class="d-flex">
-                <th class="col-3">Description :</th>
-                <td class="col">{{ workshop_type.description }}</td>
-            </tr>
-            <tr class="d-flex">
-                <th class="col-3">Terms and Conditions :</th>
-                <td class="col">{{ workshop_type.terms_and_conditions }}</td>
-            </tr>
-        </table>
+    <div class="container fade-in">
+        <div class="mb-4 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3">
+            <h2 class="text-white font-weight-800">Workshop Details</h2>
+            <a href="{% url 'workshop_app:workshop_type_list' %}" class="btn btn-outline-primary btn-sm">
+                <i class="fa fa-arrow-left mr-2"></i>Back to Categories
+            </a>
+        </div>
+
+        <div class="card overflow-hidden" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;">
+            <div class="card-body p-4 p-md-5">
+                <div class="row mb-5 pb-4 border-bottom" style="border-color: rgba(255,255,255,0.1) !important;">
+                    <div class="col-md-8">
+                        <label class="text-uppercase small font-weight-700 mb-2 d-block" style="color: rgba(255,255,255,0.5); letter-spacing: 0.1em;">Category Name</label>
+                        <h1 class="text-white font-weight-900 mb-0" style="font-size: 2.5rem; letter-spacing: -0.02em;">{{ workshop_type.name }}</h1>
+                    </div>
+                    <div class="col-md-4 mt-4 mt-md-0 d-flex align-items-center">
+                        <div class="px-4 py-3 w-100" style="background: rgba(99, 102, 241, 0.1); border-radius: 15px; border: 1px solid rgba(99, 102, 241, 0.2);">
+                            <label class="text-uppercase small font-weight-700 mb-1 d-block" style="color: #a5b4fc; letter-spacing: 0.05em;">Duration</label>
+                            <span class="h4 mb-0 text-white font-weight-800">{{ workshop_type.duration }} <small class="font-weight-600">Day(s)</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-5">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons mr-2" style="color: #6366f1;">description</span>
+                            <h5 class="mb-0 text-white font-weight-700">Course Description</h5>
+                        </div>
+                        <p class="mb-0" style="color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.05rem;">
+                            {{ workshop_type.description|default:"No description provided for this workshop category." }}
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="material-icons mr-2" style="color: #fbbf24;">gavel</span>
+                            <h5 class="mb-0 text-white font-weight-700">Terms & Conditions</h5>
+                        </div>
+                        <div class="p-4" style="background: rgba(251, 191, 36, 0.05); border-left: 4px solid #fbbf24; border-radius: 4px; color: rgba(255,255,255,0.85); font-style: italic; line-height: 1.6;">
+                            {{ workshop_type.terms_and_conditions|linebreaks|default:"Standard institutional terms and conditions apply." }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

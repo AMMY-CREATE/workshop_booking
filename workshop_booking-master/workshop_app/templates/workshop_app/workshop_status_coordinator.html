@@ -150,6 +150,66 @@
     font-size:0.73rem; padding:4px 12px; border-radius:50px;
 }
 
+/* Responsive Table -> Cards transformation */
+@media (max-width: 767px) {
+    .sg { padding: 1.5rem 1rem; }
+    
+    .table-responsive-sm table, 
+    .table-responsive-sm thead, 
+    .table-responsive-sm tbody, 
+    .table-responsive-sm th, 
+    .table-responsive-sm td, 
+    .table-responsive-sm tr { 
+        display: block; 
+        width: 100%;
+    }
+    
+    .table-responsive-sm thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .table-responsive-sm tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        padding: 0.5rem;
+        background: rgba(255,255,255,0.02);
+    }
+    
+    .table-responsive-sm td { 
+        border: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05) !important; 
+        position: relative;
+        padding-left: 50% !important; 
+        text-align: right !important;
+        min-height: 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .table-responsive-sm td:last-child {
+        border-bottom: none !important;
+    }
+    
+    .table-responsive-sm td:before { 
+        position: absolute;
+        left: 1rem;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: var(--text-muted);
+        content: attr(data-label);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+}
+
 
 
 @media (max-width: 320px) {
@@ -551,14 +611,16 @@
             <thead><tr>
                 <th>Workshop</th><th>Instructor</th><th>Date</th><th>Status</th>
             </tr></thead>
-            {% for workshop in workshops %}<tbody><tr>
-                {% if workshop.status %}
-                <td><a href="{% url 'workshop_app:workshop_details' workshop.id %}">{{ workshop.workshop_type|capfirst }}</a></td>
-                <td>{{ workshop.instructor.get_full_name }}</td>
-                <td>{{ workshop.date|date }}</td>
-                <td><span class="badge badge-success">{{ workshop.get_status }}</span></td>
-                {% endif %}
-            </tr></tbody>{% endfor %}
+            {% for workshop in workshops %}
+            {% if workshop.status %}
+            <tbody><tr>
+                <td data-label="Workshop"><a href="{% url 'workshop_app:workshop_details' workshop.id %}">{{ workshop.workshop_type|capfirst }}</a></td>
+                <td data-label="Instructor">{{ workshop.instructor.get_full_name }}</td>
+                <td data-label="Date">{{ workshop.date|date }}</td>
+                <td data-label="Status"><span class="badge badge-success">{{ workshop.get_status }}</span></td>
+            </tr></tbody>
+            {% endif %}
+            {% endfor %}
         </table>
     </div>
     <div class="sg">
@@ -567,13 +629,15 @@
             <thead><tr>
                 <th>Workshop</th><th>Date</th><th>Status</th>
             </tr></thead>
-            {% for workshop in workshops %}<tbody><tr>
-                {% if not workshop.status and workshop.tnc_accepted %}
-                <td><a href="{% url 'workshop_app:workshop_details' workshop.id %}">{{ workshop.workshop_type|capfirst }}</a></td>
-                <td>{{ workshop.date|date }}</td>
-                <td><span class="badge badge-warning">{{ workshop.get_status }}</span></td>
-                {% endif %}
-            </tr></tbody>{% endfor %}
+            {% for workshop in workshops %}
+            {% if not workshop.status and workshop.tnc_accepted %}
+            <tbody><tr>
+                <td data-label="Workshop"><a href="{% url 'workshop_app:workshop_details' workshop.id %}">{{ workshop.workshop_type|capfirst }}</a></td>
+                <td data-label="Date">{{ workshop.date|date }}</td>
+                <td data-label="Status"><span class="badge badge-warning">{{ workshop.get_status }}</span></td>
+            </tr></tbody>
+            {% endif %}
+            {% endfor %}
         </table>
     </div>
 </div>

@@ -3,19 +3,55 @@
 {% block title %} Profile {% endblock %}
 
 {% block content %}
-    <div class="container fade-in">
+<style>
+/* Responsive Table -> Cards transformation for Profile History */
+@media (max-width: 767px) {
+    .table-responsive table, 
+    .table-responsive thead, 
+    .table-responsive tbody, 
+    .table-responsive th, 
+    .table-responsive td, 
+    .table-responsive tr { 
+        display: block; width: 100%;
+    }
+    .table-responsive thead tr { position: absolute; top: -9999px; left: -9999px; }
+    .table-responsive tr {
+        margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px; padding: 0.5rem; background: rgba(255,255,255,0.02);
+    }
+    .table-responsive td { 
+        border: none !important; border-bottom: 1px solid rgba(255,255,255,0.05) !important; 
+        position: relative; padding-left: 50% !important; text-align: right !important;
+        min-height: 40px; display: flex; justify-content: flex-end; align-items: center;
+    }
+    .table-responsive td:last-child { border-bottom: none !important; }
+    .table-responsive td:before { 
+        position: absolute; left: 1rem; width: 45%; padding-right: 10px; 
+        white-space: nowrap; text-align: left; font-weight: 700;
+        color: var(--text-muted); content: attr(data-label); font-size: 0.72rem;
+        text-transform: uppercase;
+    }
+}
+
+/* Form Responsiveness */
+@media (max-width: 768px) {
+    #id_profile_form td, #id_profile_form th { display: block; width: 100%; text-align: left; }
+    input, select, textarea { width: 100% !important; margin-bottom: 1rem; }
+}
+</style>
+<div class="container fade-in">
         {% if Workshops %}
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card mb-4 text-center border-0 shadow-lg">
+                    <div class="card mb-4 text-center border-0 shadow-lg" style="background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1) !important;">
                         <div class="card-body py-5">
-                            <div class="profile-avatar-bg mb-4">
-                                <span class="material-icons" style="font-size: 5rem;">account_circle</span>
+                            <div class="profile-avatar-bg mb-4 d-inline-flex align-items-center justify-content-center" style="width: 100px; height: 100px; background: rgba(99, 102, 241, 0.1); border-radius: 50%;">
+                                <span class="material-icons" style="font-size: 4rem; color: #6366f1;">account_circle</span>
                             </div>
-                            <h3 class="font-weight-800 mb-2 text-gradient">{{ coordinator_profile.user.get_full_name }}</h3>
-                            <p class="text-muted mb-4 font-weight-600">{{ coordinator_profile.user.profile.position|capfirst }}</p>
+                            <h3 class="font-weight-800 mb-2 text-white">{{ coordinator_profile.user.get_full_name }}</h3>
+                            <p class="mb-4 font-weight-600" style="color: rgba(255,255,255,0.6);">{{ coordinator_profile.user.profile.position|capfirst }}</p>
                             <div class="d-flex justify-content-center">
-                                <span class="badge badge-primary py-2 px-3">{{ coordinator_profile.user.profile.institute }}</span>
+                                <span class="badge py-2 px-3" style="background: rgba(99, 102, 241, 0.2); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3);">{{ coordinator_profile.user.profile.institute }}</span>
                             </div>
                         </div>
                     </div>
@@ -67,15 +103,15 @@
                                     <tbody>
                                         {% for workshop in Workshops %}
                                             <tr>
-                                                <td class="pl-4">
+                                                <td data-label="Instructor" class="pl-4">
                                                     {% if workshop.instructor %}
                                                         {{ workshop.instructor }}
                                                     {% else %}
                                                         <span class="badge badge-warning">Pending</span>
                                                     {% endif %}
                                                 </td>
-                                                <td>{{ workshop.date|date }}</td>
-                                                <td class="pr-4 font-weight-500">{{ workshop.workshop_type }}</td>
+                                                <td data-label="Date">{{ workshop.date|date }}</td>
+                                                <td data-label="Type" class="pr-4 font-weight-500">{{ workshop.workshop_type }}</td>
                                             </tr>
                                         {% empty %}
                                             <tr>
@@ -111,7 +147,7 @@
                                 {% endif %}
                                 
                                 <div class="table-responsive">
-                                    <table class="table table-borderless">
+                                    <table class="table table-borderless" id="id_profile_form">
                                         {{ form.as_table }}
                                     </table>
                                 </div>

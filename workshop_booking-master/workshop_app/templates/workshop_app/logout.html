@@ -5,14 +5,28 @@
 	{% endblock %}
 
 
-	{% block content %}
-		<div class="container" align="center">
-			<br>
-			<h3>You have logged out successfully.</h3>
-			<h4>If you want to login again please
-				<a href="/">click here</a>
-			</h4>
-			<br>
-		</div>
-
-	{% endblock %}
+    <div class="container fade-in">
+        <div class="row justify-content-center mt-5 pt-5">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card overflow-hidden text-center" style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); backdrop-filter: blur(10px);">
+                    <div class="card-body p-5">
+                        <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px; background: rgba(99, 102, 241, 0.1); border-radius: 50%;">
+                            <span class="material-icons" style="font-size: 3rem; color: #6366f1;">logout</span>
+                        </div>
+                        <h2 class="text-white font-weight-800 mb-3">Logged Out</h2>
+                        <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.6;">
+                            You have been successfully logged out of the session.
+                        </p>
+                        <div class="mt-5">
+                            <a href="{% url 'workshop_app:login' %}" class="btn btn-primary px-5 py-3" style="border-radius: 12px; font-weight: 700; background: linear-gradient(135deg, #6366f1, #818cf8);">
+                                Login Again
+                            </a>
+                        </div>
+                        <p class="mt-4 mb-0 small" style="color: rgba(255,255,255,0.4);">
+                            Thank you for using FOSSEE Workshops.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
