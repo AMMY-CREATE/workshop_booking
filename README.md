@@ -59,7 +59,7 @@ I removed a lot of things that people do not need to see.
 We used space and words in a way so people can understand what they are looking at.
 We made sure that everything on the website looks the same.
 We did this so the website feels like one thing.
-We used words that're relatable and made sure there is enough difference, between colors.
+We used words that're relatable  and made sure there is enough difference, between colors.
 We thought about the Visual Hierarchy too.
 
 ### 2. How did you make sure the application works well on all devices?
@@ -81,3 +81,28 @@ Balancing visual fidelity and speed required a few key choices:
 
 The challenging part was balancing a modern UI with performance constraints. This was especially hard because most users are students who use devices.
 And converting from bigger screen to smaller screen
+
+
+## Previous Website Screenshots
+
+<details>
+<summary>Click to view screenshots of the previous design</summary>
+
+*(Save your screenshot images into a `docs/images/` folder inside your project, and update the filenames below if necessary)*
+
+### 1. Login Screen
+![Login Screen]([docs/images/login.png](https://drive.google.com/drive/u/0/folders/1WBJn6ARK8KFRcxWB-XDTo7LKxnqi3SIW))
+
+### 2. Coordinator Registration
+![Coordinator Registration](docs/images/registration.png)
+
+### 3. Dashboard Welcome
+![Dashboard Welcome](docs/images/welcome.png)
+
+### 4. Dashboard Filters
+![Dashboard Filters](docs/images/filters.png)
+
+### 5. Django Administration
+![Django Admin](docs/images/admin.png)
+
+</details>
