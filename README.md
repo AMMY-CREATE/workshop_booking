@@ -91,7 +91,7 @@ And converting from bigger screen to smaller screen
 *(Save your screenshot images into a `docs/images/` folder inside your project, and update the filenames below if necessary)*
 
 ### 1. Login Screen
-![Login Screen](docs/images/login.png)
+![Login Screen]([docs/images/login.png](https://drive.google.com/drive/u/0/folders/1WBJn6ARK8KFRcxWB-XDTo7LKxnqi3SIW))
 
 ### 2. Coordinator Registration
 ![Coordinator Registration](docs/images/registration.png)
