@@ -98,4 +98,5 @@ https://github.com/AMMY-CREATE/workshop_booking/issues/1#issue-4260773564
 
 Get a quick walkthrough of the Workshop Booking application features:
 
-[![Watch the preview](https://drive.google.com/file/d/15cHvXst_XvmGyyUFE1GM6UGgco2YuYrf/view?usp=sharing)
+[![Watch the preview]
+https://github.com/AMMY-CREATE/workshop_booking/issues/2#issue-4260840458
