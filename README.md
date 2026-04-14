@@ -89,18 +89,24 @@ And converting from bigger screen to smaller screen
 <summary>Click to view screenshots of the previous design</summary>
 
 ### 1. Login Screen
-![Login Screen](./docs/images/login_screen.png)
+![Login Screen](https://drive.google.com/file/d/13cUExnt95dGQVwI6gtoYVL3PxWyj4Rx3/view?usp=sharing)
 
 ### 2. Coordinator Registration
-![Coordinator Registration](./docs/images/coordinator_registration.png)
+![Coordinator Registration](https://drive.google.com/file/d/1wCdIF6tQBi9GiI5_DpyWVQrBmPP563ur/view?usp=sharing)
 
 ### 3. Dashboard Welcome
-![Dashboard Welcome](./docs/images/dashboard_welcome.png)
+![Dashboard Welcome](https://drive.google.com/file/d/1SazuJs1E3oiFcbzVK_vE_YGlPacjONLI/view?usp=sharing)
 
 ### 4. Dashboard Filters
-![Dashboard Filters](./docs/images/dashboard_filters.png)
+![Dashboard Filters](https://drive.google.com/file/d/1Mig51877WYejC9Ux08GMp-AXohENdGWE/view?usp=sharing)
 
 ### 5. Django Administration
-![Django Admin](./docs/images/django_admin.png)
+![Django Admin](https://drive.google.com/file/d/1sLxhGCpW3p6dNc8HmzMqQmsVMPhmcBlF/view?usp=sharing)
 
 </details>
+
+## Preview Video
+
+Get a quick walkthrough of the Workshop Booking application features:
+
+[![Watch the preview](https://drive.google.com/file/d/15cHvXst_XvmGyyUFE1GM6UGgco2YuYrf/view?usp=sharing)
