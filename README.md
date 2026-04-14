@@ -88,21 +88,19 @@ And converting from bigger screen to smaller screen
 <details>
 <summary>Click to view screenshots of the previous design</summary>
 
-*(Save your screenshot images into a `docs/images/` folder inside your project, and update the filenames below if necessary)*
-
 ### 1. Login Screen
-![Login Screen]([docs/images/login.png](https://drive.google.com/drive/u/0/folders/1WBJn6ARK8KFRcxWB-XDTo7LKxnqi3SIW))
+![Login Screen](./docs/images/login_screen.png)
 
 ### 2. Coordinator Registration
-![Coordinator Registration](docs/images/registration.png)
+![Coordinator Registration](./docs/images/coordinator_registration.png)
 
 ### 3. Dashboard Welcome
-![Dashboard Welcome](docs/images/welcome.png)
+![Dashboard Welcome](./docs/images/dashboard_welcome.png)
 
 ### 4. Dashboard Filters
-![Dashboard Filters](docs/images/filters.png)
+![Dashboard Filters](./docs/images/dashboard_filters.png)
 
 ### 5. Django Administration
-![Django Admin](docs/images/admin.png)
+![Django Admin](./docs/images/django_admin.png)
 
 </details>
