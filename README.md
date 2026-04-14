@@ -100,3 +100,6 @@ Get a quick walkthrough of the Workshop Booking application features:
 
 [![Watch the preview]
 https://github.com/AMMY-CREATE/workshop_booking/issues/2#issue-4260840458
+
+
+https://github.com/AMMY-CREATE/workshop_booking/issues/3#issue-4261030746
