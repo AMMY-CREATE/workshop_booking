@@ -88,20 +88,9 @@ And converting from bigger screen to smaller screen
 <details>
 <summary>Click to view screenshots of the previous design</summary>
 
-### 1. Login Screen
+
 https://github.com/AMMY-CREATE/workshop_booking/issues/1#issue-4260773564
 
-### 2. Coordinator Registration
-![Coordinator Registration](https://drive.google.com/file/d/1wCdIF6tQBi9GiI5_DpyWVQrBmPP563ur/view?usp=sharing)
-
-### 3. Dashboard Welcome
-![Dashboard Welcome](https://drive.google.com/file/d/1SazuJs1E3oiFcbzVK_vE_YGlPacjONLI/view?usp=sharing)
-
-### 4. Dashboard Filters
-![Dashboard Filters](https://drive.google.com/file/d/1Mig51877WYejC9Ux08GMp-AXohENdGWE/view?usp=sharing)
-
-### 5. Django Administration
-![Django Admin](https://drive.google.com/file/d/1sLxhGCpW3p6dNc8HmzMqQmsVMPhmcBlF/view?usp=sharing)
 
 </details>
 
