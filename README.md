@@ -89,7 +89,7 @@ And converting from bigger screen to smaller screen
 <summary>Click to view screenshots of the previous design</summary>
 
 ### 1. Login Screen
-![Login Screen](https://drive.google.com/file/d/13cUExnt95dGQVwI6gtoYVL3PxWyj4Rx3/view?usp=sharing)
+https://github.com/AMMY-CREATE/workshop_booking/issues/1#issue-4260773564
 
 ### 2. Coordinator Registration
 ![Coordinator Registration](https://drive.google.com/file/d/1wCdIF6tQBi9GiI5_DpyWVQrBmPP563ur/view?usp=sharing)
